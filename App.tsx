@@ -16,13 +16,9 @@ function App() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-          headerTitleAlign: 'center',
+          // headerTitleAlign: 'center',
         }}>
-        <HomeStack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{title: 'main'}}
-        />
+        <HomeStack.Screen name="Home" component={HomeScreen} />
         <HomeStack.Screen name="AboutUs" component={AboutScreen} />
       </HomeStack.Navigator>
     </NavigationContainer>
