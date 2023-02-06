@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import React from 'react';
 import {Alert, Button, Text} from 'react-native';
 
@@ -12,13 +11,15 @@ function AppHeader({title, year}: AppHeaderProps) {
   const showData = () => {
     // alert('SHOW ME');
     // console.log('Hello React Native');
-    Alert.alert('React Native' , 'hello , form alert');
+    Alert.alert('React Native', 'hello , form alert');
   };
 
   return (
     <>
-      <Button color='#CE3919' title="Click me" onPress={showData} />
-      <Text>{title} {year}</Text>
+      <Button color="#CE3919" title="Click me" onPress={showData} />
+      <Text>
+        {title} {year}
+      </Text>
       {isLogin && <Text>Welocome John Doe</Text>}
     </>
   );
