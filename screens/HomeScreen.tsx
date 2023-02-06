@@ -25,8 +25,7 @@ const HomeScreen = () => {
           <Item
             title="logout"
             iconName="logout"
-            color="white"
-            onPress={() => console.log('Log out')}></Item>
+            color="white"></Item>
         </HeaderButtons>
       ),
       headerLeft: () => (
@@ -35,7 +34,7 @@ const HomeScreen = () => {
             title="menu"
             iconName="menu"
             color="white"
-            onPress={() => console.log('Log out')}></Item>
+            onPress={() => navigation.openDrawer()}></Item>
         </HeaderButtons>
       ),
     });
