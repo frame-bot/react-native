@@ -7,6 +7,9 @@ import 'react-native-gesture-handler';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import MenuScreen from './screens/MenuScreen';
 import {NativeBaseProvider} from 'native-base';
+import DetailScreen from './screens/DetailScreen';
+import ProductScreen from './screens/ProductScreen';
+import LoginScreen from './screens/LoginScreen';
 
 const HomeStack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -21,9 +24,32 @@ function HomeStackScreen() {
         },
         // headerTitleAlign: 'center',
       }}>
+      <HomeStack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{title: 'เข้าระบบ'}}
+      />
       <HomeStack.Screen name="Home" component={HomeScreen} />
       <HomeStack.Screen name="AboutUs" component={AboutScreen} />
     </HomeStack.Navigator>
+  );
+}
+
+const ProductStack = createNativeStackNavigator();
+function ProductStackScreen() {
+  return (
+    <ProductStack.Navigator
+      screenOptions={{
+        headerStyle: {backgroundColor: 'purple'},
+        headerTintColor: 'white',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        // headerTitleAlign: 'center',
+      }}>
+      <ProductStack.Screen name="Product" component={ProductScreen} />
+      <ProductStack.Screen name="Detail" component={DetailScreen} />
+    </ProductStack.Navigator>
   );
 }
 
@@ -40,6 +66,9 @@ const App = () => {
           <Drawer.Screen
             name="HomeStack"
             component={HomeStackScreen}></Drawer.Screen>
+          <Drawer.Screen
+            name="ProductStack"
+            component={ProductStackScreen}></Drawer.Screen>
         </Drawer.Navigator>
       </NativeBaseProvider>
     </NavigationContainer>
