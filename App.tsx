@@ -6,6 +6,7 @@ import AboutScreen from './screens/AboutScreen';
 import 'react-native-gesture-handler';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import MenuScreen from './screens/MenuScreen';
+import {NativeBaseProvider} from 'native-base';
 
 const HomeStack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -29,16 +30,18 @@ function HomeStackScreen() {
 const App = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator
-        initialRouteName="HomeStack"
-        drawerContent={(props) => <MenuScreen {...props}></MenuScreen>}
-        screenOptions={{
-          headerShown: false,
-        }}>
-        <Drawer.Screen
-          name="HomeStack"
-          component={HomeStackScreen}></Drawer.Screen>
-      </Drawer.Navigator>
+      <NativeBaseProvider>
+        <Drawer.Navigator
+          initialRouteName="HomeStack"
+          drawerContent={props => <MenuScreen {...props}></MenuScreen>}
+          screenOptions={{
+            headerShown: false,
+          }}>
+          <Drawer.Screen
+            name="HomeStack"
+            component={HomeStackScreen}></Drawer.Screen>
+        </Drawer.Navigator>
+      </NativeBaseProvider>
     </NavigationContainer>
   );
 };

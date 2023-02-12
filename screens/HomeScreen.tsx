@@ -1,4 +1,5 @@
-import {View, Text, Button} from 'react-native';
+import {View, Text} from 'react-native';
+import {Button, Icon as NBIcon, Center, VStack, HStack} from 'native-base';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -22,10 +23,7 @@ const HomeScreen = () => {
       headerTitle: () => <AppLogo></AppLogo>,
       headerRight: () => (
         <HeaderButtons HeaderButtonComponent={MaterialHeaderButton}>
-          <Item
-            title="logout"
-            iconName="logout"
-            color="white"></Item>
+          <Item title="logout" iconName="logout" color="white"></Item>
         </HeaderButtons>
       ),
       headerLeft: () => (
@@ -41,15 +39,24 @@ const HomeScreen = () => {
   }, [navigation]);
 
   return (
-    <View>
-      <Icon name="home" size={30} color={'red'}></Icon>
-      <Text>HomeScreen</Text>
-      <Button
-        title="About Us"
-        onPress={() => {
-          navigation.navigate('AboutUs');
-        }}></Button>
-    </View>
+    <Center>
+      <VStack space={5} alignItems="center">
+        <HStack>
+          <Icon name="home" size={30} color={'red'}></Icon>
+          <Text>HomeScreen</Text>
+        </HStack>
+        <Button
+          leftIcon={<NBIcon as={Icon} name="home" size="lg"></NBIcon>}
+          size="lg"
+          width="40"
+          colorScheme="success"
+          onPress={() => {
+            navigation.navigate('AboutUs');
+          }}>
+          About Page
+        </Button>
+      </VStack>
+    </Center>
   );
 };
 
