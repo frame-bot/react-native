@@ -24,11 +24,11 @@ function HomeStackScreen() {
         },
         // headerTitleAlign: 'center',
       }}>
-      <HomeStack.Screen
+      {/* <HomeStack.Screen
         name="Login"
         component={LoginScreen}
         options={{title: 'เข้าระบบ'}}
-      />
+      /> */}
       <HomeStack.Screen name="Home" component={HomeScreen} />
       <HomeStack.Screen name="AboutUs" component={AboutScreen} />
     </HomeStack.Navigator>
@@ -58,7 +58,7 @@ const App = () => {
     <NavigationContainer>
       <NativeBaseProvider>
         <Drawer.Navigator
-          initialRouteName="ProductStack"
+          initialRouteName="HomeStack"
           drawerContent={props => <MenuScreen {...props}></MenuScreen>}
           screenOptions={{
             headerShown: false,
