@@ -58,7 +58,7 @@ const App = () => {
     <NavigationContainer>
       <NativeBaseProvider>
         <Drawer.Navigator
-          initialRouteName="HomeStack"
+          initialRouteName="ProductStack"
           drawerContent={props => <MenuScreen {...props}></MenuScreen>}
           screenOptions={{
             headerShown: false,
